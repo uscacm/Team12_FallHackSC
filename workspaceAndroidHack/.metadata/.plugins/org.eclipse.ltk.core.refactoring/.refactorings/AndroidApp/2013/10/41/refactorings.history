@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Wrap in Container" description="Wrap in Container" file="/AndroidApp/res/layout/activity_main.xml" flags="6" id="com.android.ide.eclipse.adt.refactoring.wrapin" name="test" proj="/AndroidApp" sel-end="979" sel-start="847" stamp="1381610866626" type="android.widget.LinearLayout"/>
+</session>

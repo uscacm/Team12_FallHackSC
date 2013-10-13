@@ -9,4 +9,7 @@
     <color name="background">#990000</color>
     <color name="text">#FFCC00</color>
 	<string name="app_id">223887357774233</string>
+	    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_filter_screen">FilterScreenActivity</string>
 </resources>

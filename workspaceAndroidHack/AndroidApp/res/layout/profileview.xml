@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background" >
+
+    <GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:columnCount="1" >
+
+        <LinearLayout
+            android:layout_width="190dp"
+            android:layout_height="149dp"
+            android:layout_column="0"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/text"
+                android:textSize="28dp" />
+
+            <TextView
+                android:id="@+id/textViewDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/text" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="Common Interests"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/text" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="149dp"
+            android:layout_height="361dp"
+            android:layout_column="0"
+            android:layout_gravity="left|bottom"
+            android:layout_row="1"
+            android:gravity="top" >
+
+            <ListView
+                android:id="@+id/listViewclass_int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:clickable="false"
+                android:divider="#000000"
+                android:drawSelectorOnTop="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:longClickable="false" >
+
+            </ListView>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageViewProfile"
+            android:layout_width="131dp"
+            android:layout_height="131dp"
+            android:layout_column="0"
+            android:layout_gravity="right|top"
+            android:layout_row="0"
+            android:src="@drawable/kalyan" />
+
+        <Button
+            android:id="@+id/button1"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="134dp"
+            android:layout_column="0"
+            android:layout_gravity="right|top"
+            android:layout_row="1"
+            android:text="Chat" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="172dp"
+            android:layout_height="64dp"
+            android:layout_column="0"
+            android:layout_gravity="right|bottom"
+            android:layout_row="1"
+            android:background="#000000"
+            android:src="@drawable/logo" />
+
+    </GridLayout>
+
+</RelativeLayout>

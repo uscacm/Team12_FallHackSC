@@ -8,6 +8,7 @@ import com.parse.ParseUser;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -24,7 +25,13 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity {
@@ -47,16 +54,50 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.listlayout);
+        
+		
+		//Change the pager title color
+	//	PagerTitleStrip titleStrip =(PagerTitleStrip) findViewById(R.id.pager_title_strip);
+	//	titleStrip.setTextColor(getResources().getColor(R.color.text));
+		
+		ListView lv = (ListView) findViewById(R.id.listView1);
+		//String[] array={"test","test2"}; 
+		//ArrayAdapter<String> myarrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
+		MainAdapter ma = new MainAdapter(this, MainData.getData());
+		lv.setAdapter(ma);
+		
+		lv.setOnItemClickListener(new OnItemClickListener() {@Override
+		public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+				long arg3) {
+			 Intent i = new Intent(MainActivity.this,ProfileActivity.class);
+			 i.putExtra("position",position);
+			 startActivity(i); 
+		}
+		});
+		
+		
+		Button ib  =(Button) findViewById(R.id.buttonFilter);
+		
+	    ib.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				 Intent i = new Intent(getApplicationContext(),FilterScreenActivity.class);
+				 startActivity(i);
+			}
+		});
+			
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the app.
-		mSectionsPagerAdapter = new SectionsPagerAdapter(
+	/*	mSectionsPagerAdapter = new SectionsPagerAdapter(
 				getSupportFragmentManager());
 
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
-		mViewPager.setAdapter(mSectionsPagerAdapter);
+		mViewPager.setAdapter(mSectionsPagerAdapter); */
 		addLocationListener();
 	}
 

@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background"
+    tools:context=".ResultsActivity" 
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".10"
+        android:background="#000000"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/logo" />
+    </LinearLayout>
+    
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".050"
+        android:background="@color/text"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textViewtemp2"
+            android:layout_width="153dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Class"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/background" />
+    </LinearLayout>
+    
+    <ListView
+        android:id="@+id/listViewFilterClassMenu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".40" >
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".050"
+        android:background="@color/text"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textViewtemp"
+            android:layout_width="153dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Interest"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/background" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listViewFilterInterestMenu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".40" >
+    </ListView>
+
+</LinearLayout>

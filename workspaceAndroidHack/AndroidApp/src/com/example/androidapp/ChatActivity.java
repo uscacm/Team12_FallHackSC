@@ -2,6 +2,7 @@ package com.example.androidapp;
 
 import java.util.ArrayList;
 
+import com.example.androidapp.FilterScreenActivity.Adapter1;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
@@ -17,10 +18,11 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class ChatActivity extends Activity {
-
+	ArrayList<String> myList = new ArrayList<String>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -50,10 +52,14 @@ send.setOnClickListener(
 				}
 			}
 		});
-}
-			
-		
 
+
+ListView lv = (ListView)findViewById(R.id.listViewChat);
+Adapter1 myarrayAdapter = new Adapter1(this, android.R.layout.simple_list_item_1, myList);
+lv.setAdapter(myarrayAdapter);
+
+}
+					
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -61,7 +67,6 @@ send.setOnClickListener(
 		return true;
 	}
 
-	
 	 public class Adapter1 extends ArrayAdapter<String> {
 
 		    public Adapter1(Context context, int resID, ArrayList<String> items) {
@@ -72,13 +77,9 @@ send.setOnClickListener(
 		    public View getView(int position, View convertView, ViewGroup parent) {
 		        View v = super.getView(position, convertView, parent);
 		      
-
 		            ((TextView) v).setTextColor(getResources().getColor(R.color.text)); 
-		            ((TextView) v).setTextSize(20);
-		        
-		            
-		            
-		            
+		            ((TextView) v).setTextSize(20);      
+		      
 		        return v;
 		    }
 

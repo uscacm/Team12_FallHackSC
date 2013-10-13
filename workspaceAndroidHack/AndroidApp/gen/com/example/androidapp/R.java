@@ -241,7 +241,7 @@ containing a value of this type.
         public static final int buttonFilter=0x7f040035;
         public static final int buttonSend=0x7f040005;
         public static final int buttonShowAll=0x7f040036;
-        public static final int buttonstartChat=0x7f040040;
+        public static final int buttonstartChat=0x7f04003f;
         public static final int com_facebook_login_activity_progress_bar=0x7f040016;
         public static final int com_facebook_picker_activity_circle=0x7f040015;
         public static final int com_facebook_picker_checkbox=0x7f040018;
@@ -270,14 +270,14 @@ containing a value of this type.
         public static final int imageView1=0x7f040009;
         public static final int imageView2=0x7f040011;
         public static final int imageView3=0x7f040032;
-        public static final int imageViewProfile=0x7f04003f;
+        public static final int imageViewProfile=0x7f04003e;
         public static final int large=0x7f040002;
         public static final int linearLayout1=0x7f040029;
         public static final int listView1=0x7f040034;
         public static final int listViewChat=0x7f040003;
         public static final int listViewFilterClassMenu=0x7f040038;
         public static final int listViewFilterInterestMenu=0x7f04003a;
-        public static final int listViewclass_int=0x7f04003e;
+        public static final int listViewclass_int=0x7f04003d;
         public static final int list_image_listRow=0x7f04002c;
         public static final int login=0x7f04000c;
         public static final int login_form=0x7f040008;
@@ -291,7 +291,7 @@ containing a value of this type.
         public static final int section_label=0x7f04002a;
         public static final int sign_in_button=0x7f04000e;
         public static final int small=0x7f040000;
-        public static final int textView1=0x7f04003d;
+        public static final int textView1=0x7f040040;
         public static final int textViewDistance=0x7f04003c;
         public static final int textViewName=0x7f04003b;
         public static final int textViewlistRow1=0x7f040031;

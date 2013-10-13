@@ -50,8 +50,8 @@ public class MainData {
 		ArrayList<String> myList = new ArrayList<String>();
 		myList.add("FOOTBALL");
 		myList.add("BIKING");
-		myList.add("FOOTBALL");
-		myList.add("BIKING");
+		myList.add("SWIMMING");
+		myList.add("TENNIS");
 		return myList;
 	}
     public static ArrayList<HashMap<String, String>> getData(){

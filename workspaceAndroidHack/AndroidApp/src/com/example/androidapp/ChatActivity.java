@@ -53,7 +53,11 @@ send.setOnClickListener(
 			}
 		});
 
-
+myList.add("ME:Hi How are you Doing");
+myList.add("SANDEEP:I am great how are you?");
+myList.add("ME:Want to meet to discuss 402");
+myList.add("SANDEEP:sure where do we meet");
+myList.add("ME:SGM sounds good");
 ListView lv = (ListView)findViewById(R.id.listViewChat);
 Adapter1 myarrayAdapter = new Adapter1(this, android.R.layout.simple_list_item_1, myList);
 lv.setAdapter(myarrayAdapter);

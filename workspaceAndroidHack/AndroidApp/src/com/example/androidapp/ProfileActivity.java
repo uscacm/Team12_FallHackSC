@@ -10,9 +10,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -45,6 +47,17 @@ public class ProfileActivity extends Activity {
 	    ListView lv = (ListView)findViewById(R.id.listViewclass_int);
 	    Adapter1 myarrayAdapter = new Adapter1(this, android.R.layout.simple_list_item_1, myList);
 	    lv.setAdapter(myarrayAdapter);
+	    
+	    
+	    Button but = (Button) findViewById(R.id.buttonstartChat);
+	    but.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				 Intent i = new Intent(getApplicationContext(),ChatActivity.class);
+				 startActivity(i);
+			}
+		});
 	    
 	}
 	

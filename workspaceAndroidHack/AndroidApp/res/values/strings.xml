@@ -6,10 +6,14 @@
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
+
     <color name="background">#990000</color>
     <color name="text">#FFCC00</color>
-	<string name="app_id">223887357774233</string>
-	    <string name="title_activity_profile">ProfileActivity</string>
+
+    <string name="app_id">223887357774233</string>
+    <string name="title_activity_profile">ProfileActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_filter_screen">FilterScreenActivity</string>
+    <string name="title_activity_chat">ChatActivity</string>
+
 </resources>

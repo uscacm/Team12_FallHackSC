@@ -86,7 +86,7 @@
             android:src="@drawable/kalyan" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/buttonstartChat"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="134dp"
             android:layout_column="0"

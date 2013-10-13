@@ -2,6 +2,15 @@ package com.example.androidapp;
 
 import java.util.Locale;
 
+import com.parse.ParseGeoPoint;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -9,6 +18,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -47,7 +57,7 @@ public class MainActivity extends FragmentActivity {
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
-
+		addLocationListener();
 	}
 
 	@Override
@@ -56,6 +66,70 @@ public class MainActivity extends FragmentActivity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	public boolean addLocationListener(){
+		// Acquire a reference to the system Location Manager
+		LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+		boolean gps_enabled = false;
+		boolean network_enabled = false;
+		// Define a listener that responds to location updates
+		LocationListener locationListener = new LocationListener() {
+			@Override
+		    public void onLocationChanged(Location location) {
+		      // Called when a new location is found by the network location provider.
+				Log.d("RegisterLocation:", location.getLongitude() + "" +location.getLatitude());
+				RegisterNewLocation(location);
+		    }
+			@Override
+		    public void onStatusChanged(String provider, int status, Bundle extras) {
+				
+			}
+			@Override
+		    public void onProviderEnabled(String provider) {}
+			@Override
+		    public void onProviderDisabled(String provider) {}
+		    
+		  };
+		  
+		try{
+			gps_enabled=locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+		}
+		catch(Exception ex){
+			
+		}
+	    try{
+	    	network_enabled=locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+	    }
+	    catch(Exception ex){
+	    	
+	    }
+		  
+	    if(network_enabled) 
+			locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60000, 0, locationListener);
+	    else if(gps_enabled)
+	    	locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60000, 0, locationListener);
+	    else {}
+	    
+	   
+	    return true;
+	}
+	
+	
+	public void RegisterNewLocation(Location location){
+		
+		/*
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Register Location" + location.getLatitude()).setTitle("Location");
+		AlertDialog dialog = builder.create();
+		dialog.show();
+		*/
+		ParseObject newLocation = new ParseObject("UserLocations");
+		newLocation.put("user", ParseUser.getCurrentUser()); 
+		newLocation.put("location", new ParseGeoPoint(location.getLatitude(), location.getLongitude()));
+		newLocation.saveInBackground();
+	}
+	
+	
 
 	/**
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
